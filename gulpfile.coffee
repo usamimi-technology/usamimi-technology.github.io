@@ -61,10 +61,10 @@ path =
 load_components = ->
   gulp.src "#{dir.bower}/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss"
     .pipe rename 'style.scss'
-    .pipe gulp.dest path.app.styles
+    .pipe gulp.dest path.src.styles
 
   gulp.src "#{dir.bower}/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables.scss"
-    .pipe gulp.dest path.app.styles
+    .pipe gulp.dest path.src.styles
 
   gulp.src path.bower.fonts
     .pipe gulp.dest path.tmp.fonts
