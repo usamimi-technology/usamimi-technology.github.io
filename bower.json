@@ -1,0 +1,23 @@
+{
+  "name": "izumin.info",
+  "version": "1.0.0",
+  "authors": [
+    "izumin5210 <masayuki@izumin.info>"
+  ],
+  "description": "portfolio site",
+  "license": "MIT",
+  "homepage": "http://izumin.info/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "bootstrap-sass-official": "~3.3.1",
+    "fontawesome": "~4.2.0"
+  }
+}

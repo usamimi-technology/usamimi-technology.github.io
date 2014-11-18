@@ -1,0 +1,35 @@
+{
+  "name": "izumin.info",
+  "version": "1.0.0",
+  "description": "portfolio site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "izumin5210 <masayuki@izumin.info>",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.3.12",
+    "browser-sync": "^1.7.0",
+    "coffee-script": "^1.8.0",
+    "del": "^0.1.3",
+    "gulp": "^3.8.10",
+    "gulp-cache": "^0.2.4",
+    "gulp-changed": "^1.0.0",
+    "gulp-coffee": "^2.2.0",
+    "gulp-gh-pages": "^0.4.0",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.0.0",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-minify-html": "^0.1.6",
+    "gulp-pleeease": "^1.0.4",
+    "gulp-plumber": "^0.6.6",
+    "gulp-rename": "^1.2.0",
+    "gulp-rev": "^2.0.1",
+    "gulp-ruby-sass": "^0.7.1",
+    "gulp-size": "^1.1.0",
+    "gulp-uglify": "^1.0.1",
+    "gulp-useref": "^1.0.2",
+    "run-sequence": "^1.0.1"
+  }
+}
