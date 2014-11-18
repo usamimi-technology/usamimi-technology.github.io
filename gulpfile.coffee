@@ -21,7 +21,7 @@ browserSync = require 'browser-sync'
 del         = require 'del'
 runSequence = require 'run-sequence'
 
-reload = browserSync.reload()
+reload = browserSync.reload
 
 dir =
   src: 'app'
@@ -51,7 +51,7 @@ path =
     fonts: "#{dir.dist}/#{dir.fonts}"
   bower:
     sass: [
-      "#{dir.bower}/bootstrap-sass-official/assets/stylesheets/"
+      "#{dir.bower}/bootstrap-sass-official/assets/stylesheets"
     ]
     fonts: [
       "#{dir.bower}/fontawesome/fonts/"
