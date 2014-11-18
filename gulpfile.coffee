@@ -111,7 +111,6 @@ gulp.task 'server', ->
   browserSync.init
     server:
       baseDir: [dir.src, dir.tmp]
-    open: true
 
 gulp.task 'watch', ->
   gulp.watch "#{dir.src}/**/*.html", [reload]
