@@ -110,36 +110,36 @@ gulp.task 'fonts', ->
 gulp.task 'server', ->
   browserSync.init
     server:
-      baseDir: [dir.src, dir.tmp]
+      baseDir: [dir.src, dir.tmp, '.']
 
 gulp.task 'watch', ->
-  gulp.watch "#{dir.src}/**/*.html", [reload]
+#  gulp.watch "#{dir.src}/**/*.html", reload
   gulp.watch "#{path.src.styles}/**/*.{scss,css}", ['sass', reload]
   gulp.watch "#{path.src.scripts}/**/*.{coffee,js}", ['coffee', reload]
-  gulp.watch "#{path.src.images}/**/*", [reload]
+  gulp.watch "#{path.src.images}/**/*", reload
 
 gulp.task 'html', ->
-  assets = useref.assets(searchPath: [dir.app, dir.tmp])
-  gulp.src "#{dir.src}/**/*.html"
-    .pipe assets
-    .pipe gulpIf('*.js', uglify())
-    .pipe gulpIf('.css', minifyCss())
-    .pipe assets.restore()
-    .pipe useref()
-    .pipe gulpIf('*.html', minifyHtml())
-    .pipe gulp.dest dir.dist
-    .pipe size(title: 'html')
+#  assets = useref.assets(searchPath: [dir.app, dir.tmp])
+#  gulp.src "#{dir.src}/**/*.html"
+#    .pipe assets
+#    .pipe gulpIf('*.js', uglify())
+#    .pipe gulpIf('.css', minifyCss())
+#    .pipe assets.restore()
+#    .pipe useref()
+#    .pipe gulpIf('*.html', minifyHtml())
+#    .pipe gulp.dest dir.dist
+#    .pipe size(title: 'html')
 
 gulp.task 'clean', ->
   del.bind null, [dir.tmp, dir.dist], { dot: true }
 
 gulp.task 'deploy', ->
-  gulp.src "#{config.dist}/**/*"
+  gulp.src "#{dir.dist}/**/*"
     .pipe deploy
       branch: 'master'
 
-gulp.task 'build', ['clean'], (cb) ->
-  runSequence ['coffee', 'sass'], ['html', 'images', 'fonts'], 'deploy', cb
+# gulp.task 'build', ['clean'], (cb) ->
+#   runSequence ['coffee', 'sass'], ['html', 'images', 'fonts'], 'deploy', cb
 
 gulp.task 'buildDev', ['coffee', 'sass', 'images', 'fonts']
 gulp.task 'default', ['buildDev', 'server', 'watch']
