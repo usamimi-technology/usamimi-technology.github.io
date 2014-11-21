@@ -113,7 +113,7 @@ gulp.task 'server', ->
       baseDir: [dir.src, dir.tmp, '.']
 
 gulp.task 'watch', ->
-#  gulp.watch "#{dir.src}/**/*.html", reload
+  gulp.watch "#{dir.src}/**/*.html", reload
   gulp.watch "#{path.src.styles}/**/*.{scss,css}", ['sass', reload]
   gulp.watch "#{path.src.scripts}/**/*.{coffee,js}", ['coffee', reload]
   gulp.watch "#{path.src.images}/**/*", reload
