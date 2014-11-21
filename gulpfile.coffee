@@ -54,8 +54,8 @@ path =
       "#{dir.bower}/bootstrap-sass-official/assets/stylesheets"
     ]
     fonts: [
-      "#{dir.bower}/fontawesome/fonts/"
-      "#{dir.bower}/bootstrap-sass-official/assets/fonts/bootstrap/"
+      "#{dir.bower}/fontawesome/fonts/*"
+      "#{dir.bower}/bootstrap-sass-official/assets/fonts/bootstrap"
     ]
 
 load_components = ->
@@ -103,7 +103,7 @@ gulp.task 'fonts', ->
   gulp.src [
     "#{path.src.fonts}/**/*"
     "#{path.tmp.fonts}/**/*"
-  ]
+  ].concat(path.bower.fonts)
     .pipe gulp.dest path.dist.fonts
     .pipe size(title: 'fonts')
 
