@@ -107,6 +107,14 @@ gulp.task 'fonts', ->
     .pipe gulp.dest path.dist.fonts
     .pipe size(title: 'fonts')
 
+gulp.task 'copy', ->
+  gulp.src [
+    "#{dir.src}/*"
+    "!#{dir.src}/*.html"
+  ]
+    .pipe gulp.dest dir.dist
+    .pipe size(title: 'others')
+
 gulp.task 'server', ->
   browserSync.init
     server:
@@ -139,7 +147,7 @@ gulp.task 'deploy', ->
       branch: 'master'
 
 gulp.task 'build', ['clean'], (cb) ->
-  runSequence ['coffee', 'sass'], ['html', 'images', 'fonts'], 'deploy', cb
+  runSequence ['coffee', 'sass'], ['html', 'images', 'fonts', 'copy'], 'deploy', cb
 
 gulp.task 'buildDev', ['coffee', 'sass']
 gulp.task 'default', ['buildDev', 'server', 'watch']
