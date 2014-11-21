@@ -54,8 +54,8 @@ path =
       "#{dir.bower}/bootstrap-sass-official/assets/stylesheets"
     ]
     fonts: [
-      "#{dir.bower}/fontawesome/fonts/*"
-      "#{dir.bower}/bootstrap-sass-official/assets/fonts/bootstrap"
+      "#{dir.bower}/fontawesome/fonts"
+      "#{dir.bower}/bootstrap-sass-official/assets/fonts"
     ]
 
 load_components = ->
