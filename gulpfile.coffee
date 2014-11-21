@@ -119,7 +119,7 @@ gulp.task 'watch', ->
   gulp.watch "#{path.src.images}/**/*", reload
 
 gulp.task 'html', ->
- assets = useref.assets(searchPath: [dir.app, dir.tmp])
+ assets = useref.assets(searchPath: [dir.src, dir.tmp, '.'])
  gulp.src "#{dir.src}/**/*.html"
    .pipe assets
    .pipe gulpIf('*.js', uglify())
