@@ -123,7 +123,7 @@ gulp.task 'html', ->
  gulp.src "#{dir.src}/**/*.html"
    .pipe assets
    .pipe gulpIf('*.js', uglify())
-   .pipe gulpIf('.css', minifyCss())
+   .pipe gulpIf('*.css', minifyCss())
    .pipe assets.restore()
    .pipe useref()
    .pipe gulpIf('*.html', minifyHtml())
